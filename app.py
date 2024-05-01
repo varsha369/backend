@@ -5,7 +5,7 @@ import pickle
 from flask_cors import CORS
 import json
 app=Flask(__name__)
-CORS(app)
+CORS(app,resources={r"/prediction": {"origins": "http://localhost:3000"}})
 
 
 model=pickle.load(open('nifty.pkl','rb'))
